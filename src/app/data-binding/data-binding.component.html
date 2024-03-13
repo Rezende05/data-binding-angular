@@ -1,0 +1,42 @@
+<section class="property-binding">
+  <article>
+    <h3>Interpolation/Interpolação</h3>
+    <p>String rendenizada com Interpolação {{ url }}</p>
+    <p>Resultado de 1 + 1 é {{1+1}}</p>
+    <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValue() }}</p>
+    <p>Curso de angular e gosto do curso: {{angularClass && getLikeClass() }}</p>
+  </article>
+  <article>
+    <h3>property binding</h3>
+    <img src="{{urlImage}}">
+    <img [src]="urlImage">
+  </article>
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione uma classe:
+      <select #type (change)="0">
+        <option value="success">Sucesso</option>
+        <option value="info">Info</option>
+        <option value="warning">Alerta</option>
+        <option value="danger">Erro</option>
+      </select>
+      <br><br>
+      <alert type={{type.value}}></alert>
+    </div>
+  </article>
+</section>
+<section class="event-binding">
+  <article>
+    <h3>Event binding</h3>
+    <div>
+      <button (click)="clickButton()" class="btn btn-primary">Me Clique</button>
+      <br><br>
+      <input type="text" (keyup)="onKeyup($event)" (keyup.enter)="saveField(inputZone.value)" (blur)="saveField(inputZone.value)" #inputZone>
+      <p>Valor Atual: {{currentValue}}</p>
+      <p>valor Salvo: {{saveValue}}</p>
+      <br>
+      <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver === true">Passe o mouse sobre mim</span>
+    </div>
+  </article>
+</section>
