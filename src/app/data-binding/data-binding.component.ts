@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AlertModule } from 'ngx-bootstrap/alert';
 
 @Component({
   selector: 'app-data-binding',
   standalone: true,
-  imports: [AlertModule],
+  imports: [AlertModule, FormsModule],
   templateUrl: './data-binding.component.html',
   styleUrl: './data-binding.component.css'
 })
@@ -16,6 +17,7 @@ export class DataBindingComponent implements OnInit {
   currentValue = ''
   saveValue = ''
   isMouseOver = false
+  name = 'ABC'
 
   getValue(){
     return 1
@@ -27,6 +29,10 @@ export class DataBindingComponent implements OnInit {
 
   onKeyup(event: KeyboardEvent){
     this.currentValue = (<HTMLInputElement>event.target).value
+  }
+
+  onKeyup2(event: KeyboardEvent){
+    this.name = (<HTMLInputElement>event.target).value
   }
 
   saveField(value: string){
