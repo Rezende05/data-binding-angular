@@ -50,3 +50,9 @@
     </div>
   </article>
 </section>
+<section class="input-output-properties">
+  <h3>Input/Output Properties</h3>
+  <app-class [className]="className"></app-class>
+  <app-output-property [value]="initialValue" (changeValue)="onChangeValue($event)" *ngIf="!delete"></app-output-property>
+  <button (click)="deleteCycle()">Deletar</button>
+</section>
